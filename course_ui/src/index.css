@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default Dark Theme */
+  --color-background: #000000;
+  --color-surface: #111111;
+  --color-text: #ffffff;
+  --color-primary: #8b5cf6;
+  /* Violet */
+  --color-secondary: #ec4899;
+  /* Dark Pink */
+  --color-accent: #6d28d9;
+  /* Purple */
+  --glow-color: rgba(139, 92, 246, 0.5);
+  --card-border: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] {
+  --color-background: #ffffff;
+  --color-surface: #f3f4f6;
+  --color-text: #1f2937;
+  --color-primary: #10b981;
+  /* Green */
+  --color-secondary: #06b6d4;
+  /* Cyan */
+  --color-accent: #f59e0b;
+  /* Yellow */
+  --glow-color: rgba(16, 185, 129, 0.3);
+  --card-border: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .glow-text {
+    text-shadow: 0 0 10px var(--glow-color);
+  }
+
+  .glow-border {
+    box-shadow: 0 0 15px var(--glow-color);
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--card-border);
+  }
+
+  [data-theme="light"] .glass-panel {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  @keyframes siren {
+
+    0%,
+    100% {
+      opacity: 0.5;
+      filter: blur(10px);
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 1;
+      filter: blur(20px);
+      transform: scale(1.02);
+    }
+  }
+
+  .animate-siren {
+    animation: siren 3s infinite ease-in-out;
+  }
+}
