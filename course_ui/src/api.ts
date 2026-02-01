@@ -9,7 +9,7 @@ export interface Course {
 }
 
 // Ensure this matches the backend endpoint.
-const BACKEND_URL = 'http://localhost:8000/search';
+const BACKEND_URL = 'https://srivishwaa55-course-recommendation-api.hf.space/search';
 
 export const searchCourses = async (query: string): Promise<Course[]> => {
     // SIMULATION MODE: Since we might not have the backend running as an API yet.
