@@ -3,3 +3,5 @@ numpy
 sentence-transformers
 torch
 tqdm
+fastapi
+uvicorn

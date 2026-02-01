@@ -10,12 +10,9 @@ venv/
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Data (Too large for GitHub)
-embeddings/
-data/
-*.npy
-*.csv
-free_courses.txt
+
+# Data (managed via LFS for Hugging Face)
+
 
 # OS
 .DS_Store
